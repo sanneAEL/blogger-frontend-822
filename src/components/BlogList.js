@@ -23,18 +23,17 @@ const BlogList = () => {
 	}, []);
 
 	if (loading && !blogs.length) {
-		return <h2>Loading</h2>;
+		return <h2>Loading...</h2>;
 	}
 
 	if (!loading && !blogs.length) {
-		return <h2>Please try again! </h2>;
+		return <h2>Add your blog! </h2>;
 	}
 
 	return (
 		<>
-			{blogs.map((blog) => (
-				<Blog key={blog._id} blog={blog} />
-			))}
+			{blogs &&
+				[...blogs].reverse().map((blog) => <Blog key={blog._id} blog={blog} />)}
 		</>
 	);
 };

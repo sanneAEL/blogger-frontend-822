@@ -15,11 +15,12 @@ const Form = () => {
 				content: content,
 			})
 			.then((res) => {
-				alert('Blog added successfully');
+				// alert('Blog added successfully');
+				window.location.reload();
 				console.log(res);
 			})
 			.catch((err) => {
-				alert('Error adding blog');
+				// alert('Error adding blog');
 			});
 	};
 
